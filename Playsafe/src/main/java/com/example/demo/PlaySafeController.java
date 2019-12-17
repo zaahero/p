@@ -9,35 +9,35 @@ public class PlaySafeController {
 
 
 	 @GetMapping("/conversions/ktoc/{num}")
-	 public int getCelcius(@PathVariable String num){
+	 public Double getCelcius(@PathVariable String k){
 
-		 int temp = Integer.valueOf(num);
-		 int value= (int) (temp * 1.8);
-	     return value;    
+		 Double temp = Double.valueOf(k);
+		 Double c = temp - 273.15;
+	     return c;    
 	 }
 	 
 	 @GetMapping("/conversions/ctoc/{cel}")
-	 public int getFarenheight(@PathVariable String num){
+	 public Double getKelvin String c){
 
-		 int temp = Integer.valueOf(num);
-		 int value= (int) (temp * 1.8);
-	     return value;    
+		 Double temp = Double.valueOf(num);
+		 Double k= temp + 273.15;
+	     return k;    
 	 }
 	 
 	 @GetMapping("/conversions/mtok/{num}")
-	 public int getKilometers(@PathVariable String num){
+	 public double getKilometers(@PathVariable String miles){
 
-		 int temp = Integer.valueOf(num);
-		 int value= (int) (temp * 1.6);
-	     return value;    
+		 double temp = Double.valueOf(miles);
+		 double km= temp / 1.609;
+	     return km;    
 	 }
 	 
 	 @GetMapping("/conversions/ktom/{num}")
-	 public int getMiles(@PathVariable String num){
+	 public double getMiles(@PathVariable String km){
 
-		 int temp = Integer.valueOf(num);
-		 int value= (int) (temp / 1.8);
-	     return value;    
+		 double temp = Double.valueOf(km);
+		 double miles= temp *1.609;
+	     return miles;    
 	 }
 
 }
